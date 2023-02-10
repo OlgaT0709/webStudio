@@ -1,0 +1,342 @@
+/*Загальні настройки */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.visually-hidden {
+    /*appearance: none;
+    position: absolute;
+    */
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.container {
+    min-width: 320px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    // outline: 2px solid tomato;
+    // outline-offset: -2px;
+
+    @include widthScreen($widthScreen);
+
+    // @media screen and (min-width: 480px) {
+    //     & { width: 480px; }}
+
+    // @media screen and (min-width: 768px) {
+    //     & {width: 768px; }}
+
+    // @media screen and (min-width: 1200px) {
+    //     & {width: 1200px;}}    
+}
+
+
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    // outline: 2px solid green;
+    // outline-offset: -2px;
+
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Медіа запити*/
+@media screen and (min-width: $desktop) {
+    .section {
+            padding-top: 94px;
+            padding-bottom: 94px;
+            
+    
+        }
+}
+
+.icon {
+    display: inline-block;
+    stroke-width: 0;
+    fill: currentColor;
+}
+
+/*Лого*/
+.logo {
+    color: $blue-color;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    outline: none;
+
+}
+
+/* Медіа запити*/
+@media screen and (min-width: $desktop) {
+    .logo {
+        font-size: 26px;
+    }
+}
+
+ 
+
+/* Соцмережа */
+.social__list {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.social__item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social__icon {
+    width: 20px;
+    height: 20px;
+    @include transitionRules ();
+}
+
+
+.social__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    @include transitionRules (background-color);
+}
+
+/*Кнопка*/
+.button {
+    padding: 0;
+    min-width: 200px;
+    max-width: 216px;
+    min-height: 50px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(30/16);
+    letter-spacing: 0.06em;
+
+    border-radius: 4px;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+    
+    &--blue {
+            color: $white-color;
+            background-color: $blue-color;
+            
+        }
+    
+}
+
+
+
+// BUTTON
+
+// %button {
+//     padding: 0;
+//     font-family: inherit;
+//     font-weight: 600;
+//     font-size: 14px;
+//     line-height: calc(18/14);
+//     letter-spacing: 0.04em;
+
+//     border-radius: 10px;
+//     outline: none;
+
+//     cursor: pointer;
+
+// }
+
+// %button--color {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-left: auto;
+//     margin-right: auto;
+//     border: none;
+//     color: $black-txt-cl;
+//     background-color: $yellow-bt-cl;
+//     @include transitionRules (background-color);
+//     @include transitionRules (color);
+
+//     &:hover {
+//         background-color: $green-bt-cl;
+//         color: $black-txt-cl;
+//     }
+
+//     &:focus {
+//         background-color: $green-bt-cl;
+//         color: $white-txt-cl;
+//     }
+
+//     &:focus .button__icon {
+//         fill: $white-txt-cl;
+//     }
+
+//     &:disabled {
+//         background-color: $grey-bt-cl;
+//         color: $black-txt-cl;
+//     }
+// }
+
+// %button--outline {
+    
+//     border: 2px solid;
+//     border-color: $yellow-bt-cl;
+//     color: $black-txt-cl;
+//     background-color: transparent;
+//     @include transitionRules (border-color);
+//     @include transitionRules (color);
+
+//     &:hover {
+//         border-color: $green-bt-cl;
+//         color: $black-txt-cl;
+//     }
+
+//     &:focus {
+//         border-color: $green-bt-cl;
+//         color: $white-txt-cl;
+//     }
+
+   
+//     &:disabled {
+//         border-color: $grey-bt-cl;
+//         color: $black-txt-cl;
+//     }
+// }
+
+// %button--underline {
+
+//     border: none;
+//     text-decoration-line: underline;
+//     color: $yellow-bt-cl;
+//     background-color: transparent;
+//     @include transitionRules (color);
+
+//     &:hover {
+//         color: $green-bt-cl;
+//     }
+
+//     &:focus {
+//         color: $white-txt-cl;
+//     }
+
+
+//     &:disabled {
+//         color: $grey-bt-cl;
+//     }
+// }
+
+// BUTTON
+
+// .button__icon {
+//     margin-left: 4px;
+//     fill: $black-txt-cl;
+//     @include transitionRules (fill);
+//     width: 12px;
+//     height: 12px;
+
+// }
+
+// .read-more__button {
+//     @extend %button;
+//     @extend %button--color;
+//     min-width: 164px;
+//     min-height: 42px;
+   
+// }
+
+// .buy-now__button {
+//     @extend %button;
+//     @extend %button--color;
+//     min-width: 152px;
+//     min-height: 42px;
+
+// }
+
+// .our-location__button {
+//     @extend %button;
+//     @extend %button--color;
+//     min-width: 196px;
+//     min-height: 42px;
+
+// }
+
+// .products__button {
+//     @extend %button;
+//     @extend %button--outline;
+//     min-width: 134px;
+//     min-height: 42px;
+
+// }
+
+// .franchise__button {
+//     @extend %button;
+//     @extend %button--outline;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-left: auto;
+//     margin-right: auto;
+//     min-width: 196px;
+//     min-height: 42px;
+
+//     &:focus .button__icon {
+//         fill: $white-txt-cl;
+//         }
+// }
+
+// .how-its-made__button {
+//     @extend %button;
+//     @extend %button--underline; 
+//     min-width: 154px;
+//     min-height: 40px;
+// }
+
+
+
+
+    

@@ -1,0 +1,168 @@
+/* Меню сайту на мобільном */
+.menu__button {
+    z-index: 3;
+    display: block;
+    margin-left: auto;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    & .menu__icon--close {
+        display: none;
+    }
+
+    &.menu__button--is-open .menu__icon--close {
+        display: block;
+    }
+
+    &.menu__button--is-open .menu__icon--open {
+        display: none;
+    }
+
+.logo.logo--is-close {
+    display: none;
+}
+
+}
+
+.menu__icon {
+    width: 40px;
+    height: 40px;
+    fill: #000000; 
+
+    @include transitionRules ();
+    
+        .menu__button:active &  {
+            fill: $blue-color;
+            outline: none;
+        }
+}
+
+.menu__container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 48px 0 48px 40px;
+    overflow: auto;
+    background-color: $white-color;
+   
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+    transform-origin: 100% 0%;
+
+    transition-property: opacity, visibility, transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        
+       
+    &.menu--is-open {
+        pointer-events: initial;
+
+        transform: scale(1); 
+        opacity: 1;
+        visibility: visible;
+            
+        
+    }
+       
+}
+
+.site-nav__link--menu {
+    
+    padding: 0;
+    font-size: 40px;
+    line-height: calc(47/40);
+        }
+
+.site-nav__item--menu {
+    &:not(:last-child) {
+        margin: 0 0 32px 0;
+    
+    }
+
+    &:last-child {
+        margin: 0;
+       
+    }
+}
+.menu__mail-tel {
+    margin-top: auto;
+}
+    
+
+.mail-tel__link--menu-mail {
+    
+    padding: 0;
+    font-size: 34px;
+    line-height: calc(40/34);
+            }        
+.mail-tel__link--menu-tel {
+    padding: 0;
+    font-size: 24px;
+    line-height: calc(28/24);
+    
+            
+}
+
+.mail-tel__item--menu {
+    &:not(:last-child) {
+        margin: 0 0 32px 0;
+    }
+
+    &:last-child {
+        margin: 0 0 64px 0;
+    }
+}
+
+.social__list--menu{
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+.social__item--menu {
+    display: inline-block;
+}
+.social__item--menu:not(:last-child) {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+        
+}
+
+.social__name {
+    color: $blue-color;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: calc (22/18);    
+    letter-spacing: 0.06em;
+
+    
+}
+
+.social__link--menu {
+    text-decoration: none;
+}
+
+
+
+
+/* Медіа запити*/
+@media screen and (min-width: $tablet) {
+    .menu__button {
+        display: none;
+    }
+    .menu__container.menu--is-open {
+        display: none;
+    }
+    
+
+}

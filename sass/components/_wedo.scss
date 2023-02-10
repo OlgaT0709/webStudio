@@ -1,0 +1,93 @@
+/*Чим ми займаємося */
+
+.wedo {
+    padding-top: 0;
+}
+
+.wedo__title {
+    margin-bottom: 50px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: $black-color;
+
+}
+
+.wedo__list {
+    display: flex;
+}
+
+
+.wedo__item {
+    /*{width: 370px;} */
+    flex-basis: calc((100% - 60px)/3);
+    overflow: hidden;
+}
+
+.wedo__item:not(:last-child){
+    margin-right: 30px;
+}
+
+
+.wedo__img-back {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        display: inline-block;
+        content: '';
+        bottom: 0;
+        left: 0;
+        height: 70px;
+        width: 100%;
+        background-color: rgba(47, 48, 58, 0.8);
+        z-index: 2;
+
+    }
+    
+
+}
+
+.wedo__img {
+    /* animation */
+    @include transitionRules (transform);
+    
+        .wedo__item:hover & {
+            transform: scale(1.2);
+        }
+    z-index: 1;
+
+}
+
+
+.wedo__text-back {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16/14);
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $white-color;
+
+    z-index: 3;
+
+   }
+
+/* Медіа запити*/
+@media screen and (max-width: calc($desktop - 1px)) {
+    .wedo {
+        display: none;
+    }
+}

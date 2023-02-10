@@ -1,0 +1,134 @@
+/* Наша команда */
+
+.team__item {
+    display: block;
+    flex-basis: 100% ;
+    margin-left: auto;
+    margin-right: auto;
+    background: $white-color;
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    
+}
+
+@media screen and (min-width :$desktop) {
+.team__item {
+    /* animation */
+  
+    transition-property: transform, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    transform-origin: 50% 0;
+    transform: perspective(800px) rotateX(0deg) translateZ(0);
+    &:hover {
+        transform: perspective(800px) rotateX(7deg) translate3d(0, -25px, 10px);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}}}
+
+
+.team__title {
+    margin-bottom: 30px;
+
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: $black-color;
+
+}
+.team {
+    background: #F5F4FA;
+}
+
+
+.team__name-position {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.team__name {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: $black-color;
+
+}
+
+.team__position {
+    margin-bottom: 16px;
+
+    font-size: 16px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+}
+
+.icon--grey {
+    fill: #afb1b8;
+}
+
+.team .social__link:hover,
+.team .social__link:focus {
+    background-color: $blue-color;
+    outline: none;
+}
+
+.team .social__link:hover .icon,
+.team .social__link:focus .icon {
+    fill: $white-color;
+}
+
+/* Медіа запити*/
+@media screen and (max-width: calc($tablet - 1px)) {
+    .team__item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .team__list {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+    .team__list {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .team__item {
+        /*{width: 354px;} */
+        flex-basis: calc((100% - 30px)/2);
+
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .team__item {
+        /*{width: 270px;} */
+        flex-basis: calc((100% - 90px)/4);
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+}
+
+@media screen and (min-width: calc($desktop)) {
+    .team__title {
+        margin-bottom: 50px;
+        font-size: 36px;
+    }
+}
+

@@ -1,0 +1,26 @@
+@mixin transitionRules ($type: fill) {
+    transition: $type 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+
+@mixin generateIcons($iconList) {
+        @each $iconName in $iconList {
+            .benefits__item--#{$iconName}::before {             
+                background-image: url("../img/#{$iconName}.svg");
+                }
+            }
+        }
+
+/*.benefits__item--$benefitsIcons::before {
+    background-image: url(../img/$benefitsIcons.svg);
+}*/
+
+@mixin widthScreen($widthList) {
+        @each $width in $widthList {
+            @media screen and (min-width: $width) {
+                    width: $width;
+            
+                }
+        }
+    }

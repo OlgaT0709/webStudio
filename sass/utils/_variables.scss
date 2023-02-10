@@ -1,0 +1,49 @@
+$blue-color: #2196F3;
+$white-color: #FFFFFF;
+$black-color: #212121;
+$text-color: #757575;
+
+/* CSS змінні
+
+:root {
+    --blue-color: #2196F3;
+    --white-color: #FFFFFF;
+    --black-color: #212121;
+    --text-color: #757575;
+}*/
+
+$benefitsIcons: "antena", "clock", "diagram", "astronaut";
+
+/*.benefits__item--antena::before {
+    background-image: url(../img/antena.svg);
+}*/
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1200px;
+
+$widthScreen: $mobile, $tablet, $desktop;
+
+// FONTS
+$main-font: 'Montserrat', sans-serif;
+$secondary-font: 'Seymour One', sans-serif;
+// TEXT COLOR
+$main-txt-cl: #131313;
+$yellow-txt-cl: #F8D24E;
+$green-txt-cl: #0A8817;
+$white-txt-cl: #FCFCFC;
+$black-txt-cl: #000000;
+$grey-txt-cl: #ABABAB;
+$grew-footer-txt-cl: #7A7A7A;
+$orange-txt-cl: #D6936D;
+// BG COLOR
+$green-bg-cl: #84A178;
+$yellow-bg-cl: #EFD478;
+$orange-bg-cl: #D6936D;
+$light-bg-cl: rgba(248, 210, 78, 0.1);
+// BUTTON COLOR
+$green-bt-cl: #0A8817;
+$yellow-bt-cl: #F8D24E;
+$grey-bt-cl: #ABABAB;
+// ICON COLOR
+$green-icon-cl: #84A178;

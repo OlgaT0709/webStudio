@@ -1,0 +1,87 @@
+/* Постійні клієнти*/
+.clients__title {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: $black-color;
+
+}
+
+.clients__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.clients__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    @include transitionRules (border-color);
+
+    &:hover,
+    &:focus    {
+        border-color: $blue-color;
+        outline: none;
+    }
+}
+
+.clients__icon {
+    width: 106px;
+    height: 60px;
+    fill: #afb1b8;
+
+    @include transitionRules ();
+
+    .clients__link:hover &,
+    .clients__link:focus & {
+        fill: $blue-color;
+        outline: none;
+    }
+
+}
+
+/* Медіа запити*/
+
+@media screen and (max-width: calc($tablet - 1px)) {
+    .clients__item {
+        /*{width: 210px;} */
+        flex-basis: calc((100% - 30px)/2);
+    }
+}
+
+@media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+
+    .clients__item {
+        /*{width: 226px;} */
+        flex-basis: calc((100% - 60px)/3);
+
+    }
+}
+
+
+@media screen and (min-width: $desktop) {
+    .clients__title {
+        margin-bottom: 50px;
+        font-size: 36px;
+        
+    }
+
+    .clients__list {
+        flex-wrap: nowrap;
+    }
+
+    .clients__item {
+        /*{width: 170px;} */
+        flex-basis: calc((100% - 150px)/6);
+
+    }
+}
+

@@ -1,0 +1,75 @@
+/*Телефон та мейл*/
+
+.mail-tel__icon {
+    margin-right: 10px;
+    @include transitionRules ();
+
+    &--width16 {
+            width: 16px;
+            height: 12px;
+        }
+    
+    &--width10 {
+        width: 10px;
+        height: 16px;
+        }
+}
+
+
+
+.mail-tel__link {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(16/14);
+    letter-spacing: 0.02em;
+    color: $text-color;
+    text-decoration: none;
+
+    @include transitionRules (color);
+
+    &:hover,
+    &:focus {
+        color: $blue-color;
+        outline: none;
+    }
+}
+
+/* Медіа запити*/
+@media screen and (max-width: calc($tablet - 1px)) {
+    .mail-tel {
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: calc($tablet)) {
+    .mail-tel {
+        display: block;
+        margin-left: auto;
+
+    }
+
+   }
+
+@media screen and (min-width: calc($desktop)) {
+    .mail-tel {
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+    }
+
+    .mail-tel__item:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    .mail-tel__link {
+        padding-top: 32px;
+        padding-bottom: 32px;
+        font-size: 14px;
+
+    }
+}

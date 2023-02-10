@@ -1,0 +1,31 @@
+/*Шапка сайта */
+.page-header {
+    
+    background-color: $white-color;
+    border-bottom: 1px solid #ECECEC;
+    position: fixed;
+    left:0;
+    top:0; 
+    width: 100vw;
+    z-index: 3;
+}
+
+.page-header__container {
+    display: flex;
+    
+    align-items: center;
+}
+
+.logo--black {
+    color: $black-color;
+   
+}
+
+/* Медіа запити*/
+
+@media screen and (max-width: calc($tablet - 1px)) {
+    .page-header__container {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}

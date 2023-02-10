@@ -1,0 +1,187 @@
+/*Підвал сторінки */
+.page-footer {
+    background-color: #2F303A;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+
+.logo--white {
+    color: $white-color;
+}
+
+.address {
+    display: block;
+}
+
+.page-footer__address {
+    margin-top: 20px;
+}
+
+.address__item:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.address__link {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    font-style: normal;
+
+    @include transitionRules (color);
+
+    &--white {
+        color: $white-color;
+    }
+
+
+    &:hover,
+    &:focus {
+        color: $blue-color;
+        outline: none;
+    }
+}
+
+.social__title {
+    margin-bottom: 20px;
+
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: calc(16/14);
+    letter-spacing: 0.03em;
+    color: $white-color;
+
+}
+
+.icon--white {
+    fill: $white-color;
+}
+
+.social__link--grey {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.page-footer__social .social__link:hover,
+.page-footer__social .social__link:focus {
+    background-color: $blue-color;
+    outline: none;
+}
+
+ .signup-form__button {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-left: auto;
+     margin-right: auto;
+
+    &:hover,
+    &:focus {
+
+        background-color: #188CE8;
+        outline: none;
+    }
+
+ }
+
+/* Медіа запити*/
+@media screen and (max-width: calc($tablet - 1px)) {
+    .page-footer__social {
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: calc($desktop - 1px)) {
+    .page-footer__signup-form {
+        margin-top: 60px;
+
+    }
+
+    .signup-form__input {
+        margin-bottom: 20px;
+    }
+
+}
+
+.page-footer__container {
+
+    text-align: center;
+}
+
+@media screen and (min-width: $tablet) {
+    .container__logo-address-social {
+        display: flex;
+
+    }
+
+   
+}
+
+@media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+    .container__logo-address-social {
+        margin-left: 76px;
+
+    }
+
+    .page-footer__social {
+        margin-left: 165px;
+    }
+
+    .page-footer__signup-form {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .signup-form__input {
+        max-width: 450px;
+    }
+}
+
+
+
+@media screen and (min-width: $desktop) {
+    .page-footer__container {
+        display: flex;
+        text-align: start;
+    }
+        
+    .social__list--positionStart  {
+        justify-content: flex-start;
+    }
+
+        .page-footer__social {
+        margin-left: 70px;
+        margin-top: 12px;
+    }
+
+    .container__input-button{
+        margin-top: 20px;
+    }
+    .page-footer__signup-form {
+        display: block;
+        margin-top: 12px;
+        margin-left: 93px;
+    }
+
+    .signup-form__label {
+        margin-right: 12px;
+        text-align: start;
+    }
+
+    .signup-form__input {
+        min-width: 358px;
+    }
+
+    .signup-form__button {
+        margin-left: 12px;
+        // transform: translateY(+20px);
+
+    }
+
+    .container__input-button {
+        display: flex;
+    }
+}

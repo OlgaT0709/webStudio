@@ -1,0 +1,358 @@
+/*Модальне вікно*/
+.backdrop {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    overflow-y: scroll;
+
+    transition-property: opacity, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+
+    &--is-hidden {
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+
+
+}
+
+.backdrop--is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0) rotate(-540deg);
+}
+
+.modal {
+    position: absolute;
+    display: block;
+    
+    top: 0;
+    left: 50%;
+    
+    background-color: $white-color;
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    transform: translate(-50%, 0) scale(1) rotate(0);
+    @include transitionRules (transform);
+   
+    
+}
+
+.close {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: $white-color;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.close__icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 18px;
+    height: 18px;
+    fill: $black-color;
+
+    @include transitionRules ();
+
+    .close:hover &,
+    .close:focus & {
+        fill: $blue-color;
+        outline: none;
+    }
+}
+
+.modal__container {
+    padding: 40px;
+}
+
+.modal__title {
+    margin-bottom: 12px;
+
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: calc(23/20);
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: $black-color;
+}
+
+
+.data-form__button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    @include transitionRules (background-color);
+
+    &:hover,
+    &:focus {
+
+        background-color: #188CE8;
+        outline: none;
+    }
+    
+}
+
+
+
+.data-form__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+}
+
+.data-form__feedback {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    &::placeholder {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: calc(14/12);
+
+        letter-spacing: 0.01em;
+        color: rgba(117, 117, 117, 0.5);
+    }
+
+}
+
+
+.data-form__label {
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc(14/12);
+
+    letter-spacing: 0.01em;
+
+    color: $text-color;
+
+}
+
+
+
+
+.data-form__input {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 12px 12px 12px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc(14/12);
+    @include transitionRules (border-color);
+
+    &:hover,
+    &:focus {
+        border-color: $blue-color;
+        outline: none;
+    }
+    
+}
+
+.data-form__icon {
+    position: absolute;
+    left: 12px;
+    bottom: 11px;
+    fill: $black-color;
+    @include transitionRules ();
+    
+
+    .data-form__input:hover+&,
+    .data-form__input:focus+& {
+        fill: $blue-color;
+        outline: none;      
+
+    }
+
+    .data-form__input:focus+& {
+        animation: vibrate 300ms linear 5 both;
+     }
+
+}
+
+   @keyframes vibrate {
+       0% {
+           transform: translate(0);
+       }
+
+       20% {
+           transform: translate(-2px, 2px);
+       }
+
+       40% {
+           transform: translate(-2px, -2px);
+       }
+
+       60% {
+           transform: translate(2px, 2px);
+       }
+
+       80% {
+           transform: translate(2px, -2px);
+       }
+
+       100% {
+           transform: translate(0);
+       }
+   }
+
+.data-form__textarea {
+    height: 120px;
+    resize: none;
+    margin: 0;
+    padding: 12px 16px 12px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc(14/12);
+    @include transitionRules (border-color);
+
+    &:hover,
+    &:focus {
+        border-color: $blue-color;
+        outline: none;
+
+    }
+    
+}
+
+
+.accept {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    
+}
+
+
+.accept__icon--uncheck {
+    opacity: 1;
+    fill: $black-color;
+
+    @include transitionRules (opacity);
+
+    .accept__input:checked + .accept__icon & {
+        opacity: 0;
+
+    }
+
+}
+
+.accept__icon--check {
+    opacity: 0;
+    
+    @include transitionRules (opacity);
+
+    .accept__input:checked + .accept__icon & {
+            opacity: 1;
+    
+        }
+
+}
+
+.accept__label {
+   
+    margin-left: 7px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc(24/14);
+    letter-spacing: 0.03em;
+    color: $text-color;
+    user-select: none;
+
+    &--blue {
+        color: $blue-color;
+        margin-left: 7px;
+    }
+}
+
+/* Медіа запити*/
+@media screen and (max-width: calc($mobile - 31px)) {
+    .modal {
+
+        width: 100%;
+        max-height: 100%;
+        }
+
+    .backdrop {
+        padding: 15px;
+    }
+
+    
+}
+
+@media screen and (min-width: calc($mobile - 30px)) {
+    .modal {
+
+        min-width: 450px;
+        min-height: 609px;
+    }
+
+   }
+
+@media screen and (min-width: $tablet) {
+    .modal {
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%) scale(1) rotate(0);
+        @include transitionRules (transform);
+       
+    }
+
+    
+}
+
+@media screen and (min-width: $desktop) {
+    .modal {
+
+        min-width: 528px;
+        min-height: 581px;
+    }
+
+    .accept__label {
+        font-size: 12px;
+    }
+}
+

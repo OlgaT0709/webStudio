@@ -1,0 +1,76 @@
+/*Переваги*/
+
+@media screen and  (max-width: calc($tablet - 1px)) {
+    .benefits__item:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    .benefits__title {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .benefits__list {
+        display: flex;
+        
+    }
+}
+
+@media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+    .benefits__list {
+            flex-wrap: wrap;
+            gap: 30px;
+                    }
+
+    .benefits__item {
+        /*{width: 354px;} */
+        flex-basis: calc((100% - 30px)/2);
+
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .benefits__item {
+            /*{width: 270px;} */
+            flex-basis: calc((100% - 90px)/4);
+    
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+
+
+.benefits__item::before {
+    content: '';
+    display: block;
+    margin-bottom: 30px;
+    height: 120px;
+    background-color: #F5F4FA;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70px;
+    border-radius: 4px;
+}
+
+@include generateIcons($benefitsIcons);
+
+.benefits__title {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $black-color;
+
+}
+
+.benefits__text {
+    line-height: calc(24/14);
+    letter-spacing: 0.03em;
+
+}
+
